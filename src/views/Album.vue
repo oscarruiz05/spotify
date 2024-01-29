@@ -89,10 +89,6 @@ export default {
                 this.$refs.reproductor.play();
                 this.play = !this.play;
             });
-            // this.$refs.reproductor.play();
-            // this.play = !this.play;
-
-
         }
     }
 }
