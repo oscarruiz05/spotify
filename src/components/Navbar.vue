@@ -2,9 +2,9 @@
 
 <template>
   <nav class="navbar navbar-expand-lg px-5">
-    <a class="navbar-brand" href="#">
+    <router-link class="navbar-brand" to="/">
       <img src="@/assets/logo-spotify.png" class="logo" alt="Logo" />
-    </a>
+    </router-link>
     <button
       class="navbar-toggler"
       type="button"

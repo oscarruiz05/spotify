@@ -8,6 +8,16 @@ const router = createRouter({
       name: 'home',
       component: () => import('@/views/Release.vue')
     },
+    {
+      path: '/album/:id',
+      name: 'almum',
+      component: () => import('@/views/Album.vue')
+    },
+    {
+      path: '/about-artist/:id',
+      name: 'about',
+      component: () => import('@/views/AboutArtist.vue')
+    },
   ]
 })
 
