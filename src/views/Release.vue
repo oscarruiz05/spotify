@@ -26,6 +26,11 @@ export default {
             spotify.getReleases().then((res) => {
                 this.data = res.albums;
                 this.albums = res.albums.items;
+            }).catch(({response}) => {
+                if(response.status == 401 && this.attempts <= this.maxAttempts){
+                    this.attempts++;
+                    this.releases();
+                }
             });
         }
     },
@@ -33,7 +38,9 @@ export default {
         return{
             title: 'New Releases',
             data: undefined,
-            albums: []
+            albums: [],
+            maxAttempts: 4,
+            attempts: 0,
         }
     }
 }
