@@ -2,19 +2,22 @@
   <div>
     <Navbar />
     <RouterView />
+    <Player />
   </div>
 </template>
 
 <script>
 import { def } from '@vue/shared';
 import { RouterLink, RouterView } from 'vue-router'
-import Navbar from './components/Navbar.vue'
+import Navbar from '@/components/Navbar.vue'
 import spotify from './services/spotify';
+import Player from '@/components/Player.vue';
 
 export default {
   components:{
     Navbar,
-  },
+    Player
+},
   created(){
     this.token()
   },

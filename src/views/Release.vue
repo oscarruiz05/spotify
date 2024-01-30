@@ -11,7 +11,7 @@
     </div>
 </template>
 <script>
-import Card from '../components/releases/Card.vue';
+import Card from '@/components/releases/Card.vue';
 import spotify from '../services/spotify';
 
 export default {
@@ -24,7 +24,6 @@ export default {
     methods:{
         releases(){
             spotify.getReleases().then((res) => {
-                this.data = res.albums;
                 this.albums = res.albums.items;
             }).catch(({response}) => {
                 if(response.status == 401 && this.attempts <= this.maxAttempts){
@@ -37,7 +36,6 @@ export default {
     data(){
         return{
             title: 'New Releases',
-            data: undefined,
             albums: [],
             maxAttempts: 4,
             attempts: 0,
